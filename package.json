@@ -1,0 +1,52 @@
+{
+  "name": "nextjs-postgresql-template",
+  "private": true,
+  "scripts": {
+    "dev": "cross-env NODE_OPTIONS=\"--disable-wasm-trap-handler\" next dev",
+    "build": "cross-env NODE_OPTIONS=\"--disable-wasm-trap-handler --max-old-space-size=3072\" next build --webpack",
+    "build:turbo": "cross-env NODE_OPTIONS=\"--disable-wasm-trap-handler\" next build",
+    "start": "cross-env NODE_OPTIONS=\"--disable-wasm-trap-handler\" next start",
+    "lint": "eslint .",
+    "typecheck": "tsc --noEmit",
+    "build:cpanel": "node scripts/cpanel-build.cjs",
+    "start:cpanel": "node scripts/cpanel-start.cjs"
+  },
+  "dependencies": {
+    "@types/bcryptjs": "^2.4.6",
+    "@types/web-push": "^3.6.4",
+    "bcryptjs": "^3.0.3",
+    "clsx": "^2.1.1",
+    "cross-env": "^7.0.3",
+    "dotenv": "17.3.1",
+    "drizzle-orm": "0.45.2",
+    "jose": "^6.2.10",
+    "jspdf": "^4.2.1",
+    "jspdf-autotable": "^5.0.8",
+    "lucide-react": "^1.39.0",
+    "mysql2": "^3.24.3",
+    "next": "16.2.6",
+    "next-themes": "^0.4.6",
+    "pusher": "^5.3.4",
+    "pusher-js": "^8.6.0",
+    "react": "19.2.6",
+    "react-dom": "19.2.6",
+    "recharts": "^3.10.1",
+    "tsx": "^4.23.13",
+    "web-push": "^3.6.7"
+  },
+  "devDependencies": {
+    "@tailwindcss/postcss": "4.1.17",
+    "@types/node": "22.19.15",
+    "@types/react": "19.2.14",
+    "@types/react-dom": "19.2.3",
+    "drizzle-kit": "0.31.10",
+    "eslint": "9.39.4",
+    "eslint-config-next": "16.2.6",
+    "postcss": "8.5.8",
+    "tailwindcss": "4.1.17",
+    "typescript": "5.9.3"
+  },
+  "engines": {
+    "node": ">=20.15.0"
+  }
+}

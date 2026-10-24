@@ -1,0 +1,42 @@
+# Render Blueprint — https://render.com/docs/blueprint-spec
+# রিপো কানেক্ট করলে Render স্বয়ংক্রিয়ভাবে এই সেটিংস পড়ে নেবে।
+services:
+  - type: web
+    name: surjosangstha
+    runtime: node
+    plan: free
+    region: singapore          # ভারত/বাংলাদেশের জন্য দ্রুততম
+    buildCommand: npm install && npm run build
+    startCommand: npm start
+    healthCheckPath: /api/ping
+    autoDeploy: true
+    envVars:
+      - key: NODE_VERSION
+        value: "20"
+      - key: NODE_ENV
+        value: production
+      # ---- নিচের মানগুলো Render ড্যাশবোর্ডে বসাতে হবে ----
+      - key: DB_HOST
+        sync: false
+      - key: DB_PORT
+        sync: false
+      - key: DB_USER
+        sync: false
+      - key: DB_PASSWORD
+        sync: false
+      - key: DB_NAME
+        sync: false
+      - key: DB_SSL
+        value: "true"
+      - key: AUTH_SECRET
+        generateValue: true     # Render নিজেই র‍্যান্ডম সিক্রেট বানাবে
+      - key: ADMIN_PHONE
+        sync: false
+      - key: ADMIN_PASSWORD
+        sync: false
+      - key: DEMO_DATA
+        value: "false"
+      - key: AUTO_SEED
+        value: "true"           # প্রথম ডিপ্লয়ের পর false করে দিন
+      - key: COOKIE_SECURE
+        value: "true"
